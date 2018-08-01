@@ -7,6 +7,7 @@ let dbCalls = {};
 let parkInfo = {};
 let attractions = {};
 let attractionTypes = {};
+let areaTypes = {};
 
 
 dbCalls.fetchParkInfo = () => {
@@ -21,6 +22,19 @@ dbCalls.fetchParkInfo = () => {
       (error) => {
          return error;
       });
+};
+
+dbCalls.fetchAreas = () => {
+  return fetch(`https://external-data-56670.firebaseio.com/areas.json`)
+    .then(res => res.json())
+    .then((result) => {
+      // console.log(typeof result);
+      areaTypes = result;
+      return areaTypes;
+    },
+    (error) => {
+       return error;
+    });
 };
 
 dbCalls.fetchAttractions = () => {
