@@ -29,8 +29,6 @@ dbCalls.fetchParkInfo = () => {
         parkInfo = result;
         return parkInfo;
       },
-
-<<<<<<< HEAD
       (error) => {
         return error;
       });
@@ -46,23 +44,6 @@ dbCalls.fetchAreas = () => {
     },
       (error) => {
         return error;
-=======
-      (error) => {
-        return error;
-      });
-};
-
-dbCalls.fetchAreas = () => {
-  return fetch("https://external-data-56670.firebaseio.com/areas.json")
-    .then(res => res.json())
-    .then((result) => {
-      // console.log(typeof result);
-      areaTypes = result;
-      return areaTypes;
-    },
-      (error) => {
-        return error;
->>>>>>> master
       });
 };
 
