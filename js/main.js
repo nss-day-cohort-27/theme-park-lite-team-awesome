@@ -5,6 +5,6 @@
 let builtDOM = require('./buildDOM.js');
 let parkInfo = require('./parkInfo.js');
 let attractions = require('./attractions.js');
-let type=require("./attrtype.js")
+let type = require("./attrtype.js");
 
 builtDOM();

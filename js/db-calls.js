@@ -67,6 +67,4 @@ dbCalls.getParkInfo = () => {
   return parkInfo;
 };
 
-
-
 module.exports = dbCalls;
