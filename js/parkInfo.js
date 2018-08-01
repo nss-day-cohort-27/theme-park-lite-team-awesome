@@ -3,7 +3,7 @@ let db = require("./db-calls.js");
 let parkInfo = {};
 
 function buildParkInfo(name, location, hoursopening, hoursclosing, description){
-    let parkInfoCard = 
+    let parkInfoCard =
     `<div class="parkInfoCard">
         <h2>${name}</h2>
         <h3>${location}</h3>
