@@ -23,7 +23,7 @@ function makeAreas(parkArea) {
         areaContainer.innerHTML +=
             `<div id="areaType${item.id}">
                 <h2>${item.name}</h2>
-                <p>${item.description}</p>sty
+                <p>${item.description}</p>
             </div>`
     }
     )}
