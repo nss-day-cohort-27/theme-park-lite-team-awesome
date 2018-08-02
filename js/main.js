@@ -5,7 +5,8 @@
 let builtDOM = require('./buildDOM.js');
 let parkInfo = require('./parkInfo.js');
 let attractions = require('./attractions.js');
-let areas = require('./area.js');
 let types = require("./attrtype.js");
+let saveMe = require("./area")
+
 
 builtDOM();
