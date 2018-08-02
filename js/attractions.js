@@ -1,16 +1,17 @@
-"use strict";
+// "use strict";
 
-let db = require('./db-calls.js');
-let makeAttractionCards = require('./attraction-build.js');
+// let db = require('./db-calls.js');
+// let makeAttractionCards = require('./attraction-build.js')
 
-let attractions = {};
+// let attractions = {};
 
-db.fetchAttractions()
-.then((result) => {
-    attractions = result;
-    console.log("attractions:", attractions);
-    makeAttractionCards(attractions);
-});
 
-module.exports = attractions;
+// db.getFilteredAttractions("area_id", 1)
+// .then((result) => {
+//     attractions = result;
+//     console.log("attractions:", attractions);
+//     makeAttractionCards(attractions);
+// });
+
+// module.exports = attractions;
 

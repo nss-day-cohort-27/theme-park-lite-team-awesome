@@ -9,7 +9,7 @@ db.fetchTypes()
    .then((result) => {
    types = result;
    console.log("types",types);
-   makeTypeArea();
+   makeTypeArea(types);
 });
 
 module.exports = types;

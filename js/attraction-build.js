@@ -1,40 +1,98 @@
 "use-strict";
 
 let buildAttractions = require('./attraction-cards.js');
+let db = require('./db-calls.js');
 
-// function addTypes(area){
-//     let mainAttractionDiv = document.querySelector(".attraction-container");
-//     mainAttractionDiv.innerHTML =
-//     `<div class="attraction-filter">
-//         <button id="area-return">Choose Another Area</button>
-//         <h2>${area}</h2>
-//         <h4>Choose an Attraction Type!</h4>
-//     </div>
-//     <div class="attraction-type-filter">
-//         <button id="attractionType1">Rides</button>
-//         <button id="attractionType2">Restaurants</button>
-//         <button id="attractionType3">Shows</button>
-//         <button id="attractionType4">Vendors</button>
-//         <button id="attractionType5">Character Meets</button>
-//         <button id="attractionType6">Animals</button>
-//         <button id="attractionType7">Games</button>
-//         <button id="attractionType8">Special Events</button>
-//     </div>
-//     <div class="attraction-content"></div>`;
-//     let areaReturnButton = document.querySelector("#area-return");
-//     areaReturnButton.addEventListener("click", makeAttractionCards);
-// }
+function makeAttractionAreaButtons(){
+    let mainAttractionDiv = document.querySelector(".attraction-container");
+    mainAttractionDiv.innerHTML = 
+    `<div class="area-filter">
+        <button id="area1">Main Street U.S.A.</button>
+        <button id="area2">Adventureland</button>
+        <button id="area3">Frontierland</button>
+        <button id="area4">Liberty Square</button>
+        <button id="area5">Fantasyland</button>
+        <button id="area6">Tomorrowland</button>
+        <button id="area7">Cinderella Castle</button>
+    </div>`;
+}
 
-function makeAttractionCards(dataArray){
+function makeAttractionTypeButtons(area){
+    let mainAttractionDiv = document.querySelector(".attraction-container");
+    mainAttractionDiv.innerHTML =
+    `<div class="attraction-filter">
+        <button id="area-return">Choose Another Area</button>
+        <h2>${area}</h2>
+        <h4>Choose an Attraction Type!</h4>
+    </div>
+    <div class="attraction-type-filter">
+        <button id="attractionType1">Rides</button>
+        <button id="attractionType2">Restaurants</button>
+        <button id="attractionType3">Shows</button>
+        <button id="attractionType4">Vendors</button>
+        <button id="attractionType5">Character Meets</button>
+        <button id="attractionType6">Animals</button>
+        <button id="attractionType7">Games</button>
+        <button id="attractionType8">Special Events</button>
+    </div>
+    <div class="attraction-content"></div>`;
+}
+
+function makeAttractionCards(){
+    makeAttractionAreaButtons();
     let attractionDiv = document.querySelector(".attraction-container");
-    dataArray.forEach((item) => {
-        attractionDiv.innerHTML += 
-        buildAttractions(item.name, item.description);
-        
+    let areaFilter = document.querySelector(".area-filter"); 
+    areaFilter.addEventListener("click", (e) => {
+        let key = e.target.id
+        if (key === "area1"){
+            let area = e.target.textContent;
+            makeAttractionTypeButtons(area);
+            key = "area_id";
+            let value = 1;
+            db.getFilteredAttractions(key, value)
+            .then((result) => {
+                attractions = result;
+                console.log("attractions:", attractions);
+                let areaObjectArray = [];
+                for (const objectLocation in attractions) {
+                    console.log("value", attractions[objectLocation])
+                    areaObjectArray.push(attractions[objectLocation]);
+                }
+                console.log("did it work", areaObjectArray);
+                let typeArray = [];
+                areaObjectArray.forEach(item => {
+                    if(item.type_id === 1)
+                    typeArray.push(item);
+                });
+                typeArray.forEach(item => {
+                    attractionDiv.innerHTML += 
+                    buildAttractions(item.name, item.description);
+                });
+            });
+        }
     });
 }
-//             });
+//         let area = e.target.textContent;
+//         makeAttractionTypeButtons(area);
+//         let attractionDiv = document.querySelector(".attraction-container");
+//         attractionDiv.addEventListener("click", (e) =>{ 
+//             let key = e.target.textContent;
+//             if(key === "Rides"){
+//                     let finallyThere = [];
+//                     for (const spot in dataObject) {
+//                         console.log("value", dataObject[spot])
+//                         finallyThere.push(dataObject[spot]);
+//                     }
+//                     console.log("did it work", finallyThere);
+//                     finallyThere.forEach(item => {
+//                         attractionDiv.innerHTML += 
+//                         buildAttractions(item.name, item.description);
+//                 });
+//             }
+//         });
+//     });
 // }
+
 
 // function makeAttractionCards(dataArray){
 //     let mainAttractionDiv = document.querySelector(".attraction-container");
