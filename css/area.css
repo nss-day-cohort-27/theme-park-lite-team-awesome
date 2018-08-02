@@ -1,7 +1,6 @@
 #areaType1 {
     position: relative;
     z-index: 1;
-    cursor: pointer;
     font-size: 25px;
     font-weight:220;
     text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
