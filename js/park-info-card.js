@@ -7,7 +7,7 @@ function buildParkCard(name, location, hoursopening, hoursclosing, description){
         <h3>${location}</h3>
         <h4>Hours of Operation: ${hoursopening} - ${hoursclosing}</h4>
         <p>${description}</p>
-    </div>`
+    </div>`;
     return parkInfoCard;
 }
 

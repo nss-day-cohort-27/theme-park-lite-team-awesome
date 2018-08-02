@@ -9,28 +9,38 @@ let attractions = {};
 let attractionTypes = {};
 let areaTypes = {};
 
-
-dbCalls.fetchParkInfo = () => {
-  return fetch("https://external-data-56670.firebaseio.com/park-info.json")
+dbCalls.fetchAreas = () => {
+  return fetch("https://external-data-56670.firebaseio.com/areas.json")
     .then(res => res.json())
     .then((result) => {
-      // console.log(typeof result);
-      console.log(result);
-      parkInfo = result;
-      return parkInfo;
+     areaTypes = result;
+      return areaTypes;
     },
+    (error) => {
+       return error;
+    });
+};
+dbCalls.fetchParkInfo = () => {
+    return fetch("https://external-data-56670.firebaseio.com/park-info.json")
+      .then(res => res.json())
+      .then((result) => {
+        console.log(typeof result);
+        console.log(result);
+        parkInfo = result;
+        return parkInfo;
+      },
       (error) => {
         return error;
       });
 };
 
-dbCalls.fetchAreas = () => {
-  return fetch("https://external-data-56670.firebaseio.com/areas.json")
+dbCalls.fetchAttractions = () => {
+  return fetch("https://external-data-56670.firebaseio.com/attractions.json")
     .then(res => res.json())
     .then((result) => {
       // console.log(typeof result);
-      areaTypes = result;
-      return areaTypes;
+      attractions = result;
+      return attractions;
     },
       (error) => {
         return error;
@@ -57,6 +67,8 @@ dbCalls.fetchTypes = () => {
       // console.log(typeof result);
       attractionTypes = result;
       return attractionTypes;
+     console.log(attractionTypes);
+
     },
       (error) => {
         return error;

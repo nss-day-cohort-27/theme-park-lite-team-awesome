@@ -1,7 +1,7 @@
 "use strict";
 
 let db = require("./db-calls.js");
-let buildParkInfo = require("./park-info-build.js")
+let buildParkInfo = require("./park-info-build.js");
 
 let parkInfo = {};
 

@@ -5,7 +5,7 @@ function buildAttractions(name, description){
         `<div class="attraction-card">
             <h3>${name}</h3>
             <p>${description}</p>
-        </div>`
+        </div>`;
     return attractionCard;
 }
 

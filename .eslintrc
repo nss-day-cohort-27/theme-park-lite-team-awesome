@@ -7,10 +7,10 @@
         }
     },
     "rules": {
-        "semi": 0,
-        "quotes": ["error", "double"],
+        "semi": 2,
+        "quotes": 0,
         "eqeqeq": 2,
-        "no-trailing-spaces": 2
+        "no-trailing-spaces": 0
     }
 }
   

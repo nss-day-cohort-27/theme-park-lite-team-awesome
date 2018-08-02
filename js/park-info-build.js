@@ -1,6 +1,6 @@
 "use strict";
 
-let buildParkCard = require("./park-info-card.js")
+let buildParkCard = require("./park-info-card.js");
 
 function buildParkInfo(dataArray){
     let parkInfoDiv = document.querySelector(".park-info-container");
