@@ -1,145 +1,73 @@
-#areaType1 {
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    font-size: 25px;
-    font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
+header, footer {
+    padding: 1em;
+    text-align: center;
 }
 
-#areaType1:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj2HXsO_V6HQMV001pl7HEI-hmyZD-0ZyDh3diuAM5hMWMkb-VPw"); 
-    opacity: .6;
+header {
+    height: 500px;
+    background: 
+        linear-gradient( to bottom,
+            rgba(255, 166, 0, 0.8), 
+            rgba(255, 166, 0, 0.6), 
+            rgba(105, 105, 105, 0.4), 
+            rgba(0, 0, 0, .2)),
+        url("https://www.infinity-luxe-chauffeur.com/wp-content/uploads/2018/04/Parc-attraction.jpg");
+    display: flex;
+    justify-content: center;
 }
 
-#areaType2 {
-    position: relative;
-    z-index: 1;
-    font-size: 25px;
-    font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
-     
+header h1 {
+    text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+    color: white;
+    font-size: 4em;
+    margin: auto;
+    font-family: 'Norican', cursive;
+    letter-spacing: 3px;
 }
 
-#areaType2:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThhMIjeTkPilgvN9j5DGUuEBbb1SGMxlTrbkvXe7P2YcrEy4daMA"); 
-    opacity: .5;
+footer {
+    background:
+        linear-gradient( to top,
+            rgba(255, 166, 0), 
+            rgba(255, 166, 0), 
+            rgba(0, 0, 0));
 }
 
-#areaType3 {
-    position: relative;
-    z-index: 1;
-    font-size: 25px;
-    font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
-     
+footer a {
+    text-decoration: none;
+    color: black;
 }
 
-#areaType3:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCsICagf0uVNG-eHIZyLhzWDCFufoJvXx7t_d_Qbd7h3DlfAK7Zw"); 
-    opacity: .5;
-}
-#areaType4 {
-    position: relative;
-    z-index: 1;
-    font-size: 25px;
-    font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
-     
+footer a:hover {
+    color: white;
 }
 
-#areaType4:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Liberty_Bell_2008.jpg/256px-Liberty_Bell_2008.jpg"); 
-    opacity: .5;
-}
-#areaType5 {
-    position: relative;
-    z-index: 1;
-    font-size: 25px;
-    font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
-     
+.park-info-container {
+    background: black;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#areaType5:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7FUX-_CyWjRgxKU7wvHCJk8RmgUvb4eOXfgBttUVGrPFf96F"); 
-    opacity: .5;
+.park-info-container p {
+    text-align: left;
 }
 
-#areaType6 {
-    position: relative;
-    z-index: 1;
-    font-size: 25px;
-    font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
-     
-}
 
-#areaType6:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7FUX-_CyWjRgxKU7wvHCJk8RmgUvb4eOXfgBttUVGrPFf96F"); 
-    opacity: .5;
+.attraction-container {
+    background: radial-gradient(circle, dimgrey, black) fixed;
+    color: orange;
+    padding: 1em;
 }
-
-    #areaType7 {
-        position: relative;
-        z-index: 1;
-        font-size: 25px;
-        font-weight:220;
-    text-shadow: 0px 0px 3px rgb(20, 1, 1), -1px -1px rgb(240, 233, 233), 1px 1px #000;
-     
-    }
-    
-    #areaType7:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyqJCBXvW_oiOYQUnQJLWCEauDFcaXaVMKhj5u1VQzwWqVAvWcxA"); 
-        opacity: .8;
-    }
-   

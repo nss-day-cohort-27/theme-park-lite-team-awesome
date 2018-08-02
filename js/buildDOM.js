@@ -8,6 +8,8 @@ function buildDOM(){
     const header = document.createElement("header");
     const footer = document.createElement("footer");
     const main = document.createElement("main");
+    header.innerHTML = `<h1>NSS Amusement Arcade</h1>`;
+    footer.innerHTML = `<p><small>&copy; Team Awesome</small></p><a href="nashvillesoftwareschool.com">Nashville Software School</a>`;
     body.insertBefore(header, script);
     body.insertBefore(main, script);
     body.insertBefore(footer, script);
@@ -24,7 +26,7 @@ function buildDOM(){
     
     const typeDiv = document.createElement("div");
     typeDiv.setAttribute("class", "type-container");
-    console.log(parkDiv)
+    console.log(parkDiv);
     mainContent.appendChild(attractionDiv);
     mainContent.insertBefore(typeDiv, attractionDiv);
     mainContent.insertBefore(areaDiv, typeDiv);
