@@ -3,12 +3,14 @@ let db = require("./db-calls.js");
 let makeTypeArea= require("./typeButton.js");
 let types = {};
 
+
+
 db.fetchTypes()
    .then((result) => {
    types = result;
-   console.log("types",types)
-   makeTypeArea(types);
+   console.log("types",types);
+   makeTypeArea();
 });
 
-
+module.exports = types;
 
