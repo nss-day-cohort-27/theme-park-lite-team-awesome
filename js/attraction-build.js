@@ -40,35 +40,38 @@ function makeAttractionTypeButtons(area){
 
 function makeAttractionCards(){
     makeAttractionAreaButtons();
-    let attractionDiv = document.querySelector(".attraction-container");
+    let mainAttractionDiv = document.querySelector(".attraction-container");
     let areaFilter = document.querySelector(".area-filter"); 
-    areaFilter.addEventListener("click", (e) => {
-        let key = e.target.id
+    mainAttractionDiv.addEventListener("click", (e) => {
+        console.log("I was clicked");
+        let key = e.target.id;
         if (key === "area1"){
             let area = e.target.textContent;
             makeAttractionTypeButtons(area);
-            key = "area_id";
-            let value = 1;
-            db.getFilteredAttractions(key, value)
-            .then((result) => {
-                attractions = result;
-                console.log("attractions:", attractions);
-                let areaObjectArray = [];
-                for (const objectLocation in attractions) {
-                    console.log("value", attractions[objectLocation])
-                    areaObjectArray.push(attractions[objectLocation]);
-                }
-                console.log("did it work", areaObjectArray);
-                let typeArray = [];
-                areaObjectArray.forEach(item => {
-                    if(item.type_id === 1)
-                    typeArray.push(item);
+            if (e.target.id === "attractionType1"){
+                key = "area_id";
+                let value = 1;
+                db.getFilteredAttractions(key, value)
+                .then((result) => {
+                    attractions = result;
+                    console.log("attractions:", attractions);
+                    let areaObjectArray = [];
+                    for (const objectLocation in attractions) {
+                        areaObjectArray.push(attractions[objectLocation]);
+                    }
+                    console.log("did it work", areaObjectArray);
+                    let typeArray = [];
+                    areaObjectArray.forEach(item => {
+                        if(item.type_id === 1)
+                        typeArray.push(item);
+                    });
+                    let attractionDiv = document.querySelector(".attraction-content")
+                    typeArray.forEach(item => {
+                        attractionDiv.innerHTML += 
+                        buildAttractions(item.name, item.description);
+                    });
                 });
-                typeArray.forEach(item => {
-                    attractionDiv.innerHTML += 
-                    buildAttractions(item.name, item.description);
-                });
-            });
+            }
         }
     });
 }
